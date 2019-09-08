@@ -1,1 +1,1 @@
-A few of interesting sql queries
+A few interesting sql queries
