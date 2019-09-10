@@ -1,4 +1,4 @@
-
+SET SESSION sql_mode = CONCAT(@@sql_mode, ',ONLY_FULL_GROUP_BY');
 
 /*Given the structure below fill in missing dep_id and manager_id*/
 
@@ -82,7 +82,6 @@ on t1.us_id=t2.user_id
 where transactions_ts >= first_trans
 and transactions_ts <  right_trans
 group by us_id) as t3;
-
 
 
 
