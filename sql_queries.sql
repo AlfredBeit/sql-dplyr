@@ -25,15 +25,15 @@ INSERT INTO `employees` (`id`, `name`, `Dep_id`, `Manager_id`, `Salary`) VALUES
 select e.id, e.name,
 max(case when e.dep_id is null then t1.dep_id else e.dep_id end) as dep_id_new, 
 max(case when e.manager_id is null then t1.manager_id else e.manager_id end) as man_id_new,
-e.Salary
+Max(e.Salary) as salary
 from employees e cross join
 (select id, dep_id, manager_id from employees  
 where dep_id is not null
 and manager_id is not null
 ) as  t1 
-group by e.id
+group by e.id,e.name
 
-order by e.Salary desc;
+order by salary desc;
 
 
 
