@@ -7,33 +7,31 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `name` varchar(200),
   `Dep_id` int(6) unsigned ,
   `Manager_id` int(6) unsigned,
-  `Salary` int ,
 
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
-INSERT INTO `employees` (`id`, `name`, `Dep_id`, `Manager_id`, `Salary`) VALUES
-  ('1', 'John Smith',1,NULL,2000 ),
-  ('2', 'Jack Smith',NULL,1, 1500),
-  ('3', 'Becky Smith',1,2,2000),
-  ('4', 'Rebecca Smith',2,2,700),
-  ('5', 'Sonny Smith',3,1,3000);
+INSERT INTO `employees` (`id`, `name`, `Dep_id`, `Manager_id`) VALUES
+  ('1', 'John Smith',1,NULL ),
+  ('2', 'Jack Smith',NULL,1),
+  ('3', 'Becky Smith',1,2),
+  ('4', 'Rebecca Smith',2,2),
+  ('5', 'Sonny Smith',3,1);
 
 
 /*Non - unique Answer*/
 
 
 select e.id, e.name,
-max(case when e.dep_id is null then t1.dep_id else e.dep_id end) as dep_id_new, 
-max(case when e.manager_id is null then t1.manager_id else e.manager_id end) as man_id_new,
-Max(e.Salary) as salary
+max(case when e.dep_id is null then t1.dep_id else e.dep_id end)
+ as dep_id_new, 
+max(case when e.manager_id is null then t1.manager_id else e.manager_id end)
+ as man_id_new
 from employees e cross join
 (select id, dep_id, manager_id from employees  
 where dep_id is not null
 and manager_id is not null
 ) as  t1 
-group by e.id,e.name
-
-order by salary desc;
+group by e.id,e.name;
 
 
 
