@@ -4,7 +4,7 @@ require(lubridate)
 
 data <-
   read.csv(
-    '/Users/abittaraev/Desktop/test_task_mail_ru/sql_dplyr.csv',
+    '/Users/abittaraev/Desktop/sql_dplyr.csv',
     stringsAsFactors = FALSE,
     header = TRUE
   )
