@@ -3,7 +3,7 @@ require(lubridate)
 
 
 
-data <- data_frame(
+data <- data.frame(
   transactions_ts = c(
     "2016-06-18 13:46:51",
     "2016-06-18 17:29:25",
