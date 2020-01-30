@@ -1,7 +1,12 @@
 require(dplyr)
 require(lubridate)
 
-
+#### 
+# Given the structure below
+# find how many transactions, on average, 
+# each user executes during a 12 hours timespan 
+# starting from the first transaction.
+####
 
 data <- data.frame(
   transactions_ts = c(
@@ -45,6 +50,7 @@ data <- data.frame(
 
 print(data)
 
+# Answer
 
 data %>%
   group_by(user_id) %>%

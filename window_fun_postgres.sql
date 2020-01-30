@@ -1,6 +1,12 @@
+/*Given the structure below
+find how many transactions, on average, 
+each user executes during a 12 hours timespan 
+starting from the first transaction.*/
+
+
 CREATE TABLE IF NOT EXISTS transactions (
 transactions_ts timestamp ,
-user_id bigint  NOT NULL,
+user_id bigint  NOT NULL,	
 transaction_id bigint NOT NULL, 
 item varchar(200), PRIMARY KEY(transaction_id)
 );
