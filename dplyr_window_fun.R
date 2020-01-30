@@ -63,4 +63,4 @@ data %>%
   filter(transactions_ts >= time_first &
            transactions_ts < time_right)  %>%
   ungroup() %>%
-  summarise(avg_per_user = n_distinct(transaction_id) / n_distinct(user_id))
+    (avg_per_user = n_distinct(transaction_id) / n_distinct(user_id))
