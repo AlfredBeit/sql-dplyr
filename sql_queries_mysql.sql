@@ -59,7 +59,7 @@ INSERT INTO `transactions` (`transactions_ts`, `user_id`, `transaction_id`,`item
 
 
 
-/*Answer*/
+/*Answer, no windows in mysql*/
 
 
 select 
