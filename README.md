@@ -1,2 +1,2 @@
-### A few interesting sql queries
-### windows pgsql vs dplyr 
+## A few interesting sql queries
+### windows in  postgresql vs dplyr 
